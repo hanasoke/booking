@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    PERSONAEO
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+  <!-- Firebase Script -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDUnGtRP_WAOnZSCwZ7XS7tQsTBhfyAf8w",
+      authDomain: "project-bye1.firebaseapp.com",
+      databaseURL: "https://project-bye1.firebaseio.com",
+      projectId: "project-bye1",
+      storageBucket: "project-bye1.appspot.com",
+      messagingSenderId: "542719376561",
+      appId: "1:542719376561:web:f50ceb71bf092f412bf690",
+      measurementId: "G-CL0BPQL6DX"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+</head>
+
+<body class="dark-edition">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          EVENT ORGANIZER
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="bookingList.html">
+              <i class="material-icons">book</i>
+              <p>Booking List</p>
+            </a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">schedule</i>
+              <p>Booking Accepting</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bookingRejecting.html">
+              <i class="material-icons">cancel_schedule_send</i>
+              <p>Booking Rejecting</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bookingCompleted.html">
+              <i class="material-icons">check_circle</i>
+              <p>Booking Completed</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:void(0)">Admin Profile</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+            aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item  dropdown">
+                <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Administrator <i class="material-icons">person</i>
+                  <div class="ripple-container"></div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="javascript:void(0)" onclick="signOut()">Log Out</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Booking Profile</h4>
+                  <p class="card-category">Update / Completed / Cancel Booking</p>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="id" placeholder="ID" disabled>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="name" placeholder="Order Name">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="company" placeholder="Company Name">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="email" placeholder="Order Email Address">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="loc" placeholder="Event Location">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="people" placeholder="Amount of People">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <input type="date" class="form-control" id="date" disabled>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="status" placeholder="Status">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <div>
+                            <textarea class="form-control" rows="5" id="message" placeholder="Order Message"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-info pull-left mr-3" id="update">Update</button>
+                    <button type="button" class="btn btn-success pull-left mr-3" id="completed">Completed</button>
+                    <button type="button" class="btn btn-danger pull-left" id="cancel">Cancel</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-category">Admin</h6>
+                  <h4 class="card-title">Hanas & Azam</h4>
+                  <p class="card-description">
+                    Disini kami mulai mengelola data pengguna, mulai dari menerima booking, me-reject booking, dan
+                    cancel booking
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Information About Booking</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table" id="booking_list">
+                      <thead class=" text-primary">
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Company</th>
+                          <th>Email</th>
+                          <th>Location</th>
+                          <th>People</th>
+                          <th>Date</th>
+                          <th>Message</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="copyright float-right">
+            &copy 2020, made with <i class="material-icons">favorite</i> by
+            <a href="https://www.creative-tim.com" target="_blank">Group 11</a> for a better web.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Filters</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger active-color">
+            <div class="badge-colors ml-auto mr-auto">
+              <span class="badge filter badge-purple active" data-color="purple"></span>
+              <span class="badge filter badge-azure" data-color="azure"></span>
+              <span class="badge filter badge-green" data-color="green"></span>
+              <span class="badge filter badge-warning" data-color="orange"></span>
+              <span class="badge filter badge-danger" data-color="danger"></span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </li>
+        <li class="header-title">Images</li>
+        <li>
+          <a class="img-holder switch-trigger" href="javascript:void(0)">
+            <img src="../assets/img/sidebar-1.jpg" alt="">
+          </a>
+        </li>
+        <li class="active">
+          <a class="img-holder switch-trigger" href="javascript:void(0)">
+            <img src="../assets/img/sidebar-2.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a class="img-holder switch-trigger" href="javascript:void(0)">
+            <img src="../assets/img/sidebar-3.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a class="img-holder switch-trigger" href="javascript:void(0)">
+            <img src="../assets/img/sidebar-4.jpg" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="https://unpkg.com/default-passive-events"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Chartist JS -->
+  <script src="../assets/js/plugins/chartist.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/material-dashboard.js"></script>
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script src="../assets/js/tables.js"></script>
+  <script src="../assets/js/user.js"></script>
+  <script src="../assets/js/sweetalert2.all.min.js"></script>
+  <script src="../assets/js/scripts.js"></script>
+  <script>
+    const tbBooking = document.getElementById('booking_list');
+    const databaseRef = firebase.database().ref('bookingAccepting/');
+    let rowIndex = 1;
+
+    databaseRef.once('value', function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+        const childKey = childSnapshot.key;
+        const childData = childSnapshot.val();
+
+        const row = tbBooking.insertRow(rowIndex);
+        const cellId = row.insertCell(0);
+        const cellName = row.insertCell(1);
+        const cellCompany = row.insertCell(2);
+        const cellEmail = row.insertCell(3);
+        const cellLocation = row.insertCell(4);
+        const cellPeople = row.insertCell(5);
+        const cellDate = row.insertCell(6);
+        const cellMessage = row.insertCell(7);
+        const cellStatus = row.insertCell(8);
+
+        cellId.appendChild(document.createTextNode(childKey));
+        cellName.appendChild(document.createTextNode(childData.name));
+        cellCompany.appendChild(document.createTextNode(childData.company));
+        cellEmail.appendChild(document.createTextNode(childData.email));
+        cellLocation.appendChild(document.createTextNode(childData.loc));
+        cellPeople.appendChild(document.createTextNode(childData.people));
+        cellDate.appendChild(document.createTextNode(childData.date));
+        cellMessage.appendChild(document.createTextNode(childData.message));
+        cellStatus.appendChild(document.createTextNode(childData.status));
+        rowIndex = rowIndex + 1;
+      });
+      False()
+      const table = document.getElementById("booking_list");
+      const rows = table.getElementsByTagName("tr");
+      for (let i = 0; i < rows.length; i++) {
+        const currentRow = table.rows[i];
+        const createClickHandler = function (row) {
+          return function () {
+            const cell1 = row.getElementsByTagName("td")[0];
+            const cell2 = row.getElementsByTagName("td")[1];
+            const cell3 = row.getElementsByTagName("td")[2];
+            const cell4 = row.getElementsByTagName("td")[3];
+            const cell5 = row.getElementsByTagName("td")[4];
+            const cell6 = row.getElementsByTagName("td")[5];
+            const cell7 = row.getElementsByTagName("td")[6];
+            const cell8 = row.getElementsByTagName("td")[7];
+            const cell9 = row.getElementsByTagName("td")[8];
+
+            const id = cell1.innerHTML;
+            const name = cell2.innerHTML;
+            const company = cell3.innerHTML;
+            const email = cell4.innerHTML;
+            const loc = cell5.innerHTML;
+            const people = cell6.innerHTML;
+            const date = cell7.innerHTML;
+            const message = cell8.innerHTML;
+            const status = cell9.innerHTML;
+
+            document.getElementById('id').value = id;
+            document.getElementById('name').value = name;
+            document.getElementById('company').value = company;
+            document.getElementById('email').value = email;
+            document.getElementById('loc').value = loc;
+            document.getElementById('people').value = people;
+            document.getElementById('date').value = date;
+            document.getElementById('message').value = message;
+            document.getElementById('status').value = status;
+            True();
+          };
+
+        };
+        currentRow.onclick = createClickHandler(currentRow);
+      };
+    });
+
+    const update = document.querySelector('#update');
+    const databaseUpdate = firebase.database().ref('bookingAccepting/');
+
+    update.addEventListener('click', function () {
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const email = document.getElementById('email').value;
+      const loc = document.getElementById('loc').value;
+      const people = document.getElementById('people').value;
+      let date = document.getElementById('date').value;
+      const myDate = new Date(date);
+      const today = new Date();
+      const message = document.getElementById('message').value;
+      const status = document.getElementById('status').value;
+      let uid = document.getElementById('id').value;
+
+      if (isNaN(people) || people < 31) {
+        Swal.fire({
+          title: 'Failed',
+          text: 'approximate guest who will be present, can not be less than 30 people',
+          icon: 'warning',
+          confirmButtonColor: ' #2ecc71 '
+        }).then((result) => {
+          if (result.value) {
+            return false;
+          }
+        });
+      } else if (myDate < today) {
+        Swal.fire({
+          title: 'Failed',
+          text: 'You cannot choose the date',
+          icon: 'warning',
+          confirmButtonColor: ' #2ecc71 '
+        }).then((result) => {
+          if (result.value) {
+            return false;
+          }
+        });
+      } else if (name != "" && company != "" && email != "" && loc != "" && people != "" && date != "" && message !=
+        "" && status != "") {
+        let data = {
+          name: name,
+          company: company,
+          email: email,
+          loc: loc,
+          people: people,
+          date: date,
+          message: message,
+          status: status
+        };
+
+        let updates = {};
+
+        updates['/bookingAccepting/' + uid] = data;
+        firebase.database().ref().update(updates);
+        Swal.fire({
+          title: 'Booking Accepting',
+          text: 'Booking Update created successfully',
+          icon: 'success',
+          confirmButtonColor: ' #2ecc71 '
+        }).then((result) => {
+          if (result.value) {
+            reload_page();
+          }
+        });
+      } else {
+        Swal.fire({
+          title: 'Booking Failed',
+          text: 'You must Fill all data',
+          icon: 'warning',
+          confirmButtonColor: ' #2ecc71 '
+        });
+      }
+
+    });
+
+    const completed = document.querySelector('#completed');
+    const databaseCompleted = firebase.database().ref('bookingCompleted/');
+
+    completed.addEventListener('click', function () {
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const email = document.getElementById('email').value;
+      const loc = document.getElementById('loc').value;
+      const people = document.getElementById('people').value;
+      const date = document.getElementById('date').value;
+      const message = document.getElementById('message').value;
+      const status = document.getElementById('status').value;
+      let uid = document.getElementById('id').value;
+      let ba = firebase.database().ref().child('bookingCompleted').push().key;
+
+      let data = {
+        name: name,
+        company: company,
+        email: email,
+        loc: loc,
+        people: people,
+        date: date,
+        message: message,
+        status: "COMPLETED"
+      };
+
+      let updates = {};
+
+      firebase.database().ref().child('/bookingAccepting/' + uid).remove();
+      updates['/bookingCompleted/' + ba] = data;
+      firebase.database().ref().update(updates);
+      Swal.fire({
+        title: 'COMPLETED Booking created successfully',
+        icon: 'success',
+        confirmButtonColor: ' #2ecc71 '
+      }).then((result) => {
+        if (result.value) {
+          reload_page();
+        }
+      });
+
+    });
+
+    const cancel = document.querySelector('#cancel');
+    const databaseCancel = firebase.database().ref('bookingRejecting/');
+
+    cancel.addEventListener('click', function (params) {
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const email = document.getElementById('email').value;
+      const loc = document.getElementById('loc').value;
+      const people = document.getElementById('people').value;
+      const date = document.getElementById('date').value;
+      const message = document.getElementById('message').value;
+      const status = document.getElementById('status').value;
+      let uid = document.getElementById('id').value;
+      let br = firebase.database().ref().child('bookingRejecting').push().key;
+
+      let data = {
+        name: name,
+        company: company,
+        email: email,
+        loc: loc,
+        people: people,
+        date: date,
+        message: message,
+        status: "CANCEL"
+      };
+
+      let updates = {};
+
+      firebase.database().ref().child('/bookingAccepting/' + uid).remove();
+      updates['/bookingRejecting/' + br] = data;
+      firebase.database().ref().update(updates);
+      Swal.fire({
+        title: 'CANCEL Booking created successfully',
+        icon: 'success',
+        confirmButtonColor: ' #2ecc71 '
+      }).then((result) => {
+        if (result.value) {
+          reload_page();
+        }
+      });
+    });
+
+    function False() {
+      let name = document.getElementById('name');
+      let company = document.getElementById('company');
+      let email = document.getElementById('email');
+      let loc = document.getElementById('loc');
+      let people = document.getElementById('people');
+      let date = document.getElementById('date');
+      let message = document.getElementById('message');
+      let status = document.getElementById('status');
+      let update = document.getElementById('update');
+      let completed = document.getElementById('completed');
+      let cancel = document.getElementById('cancel');
+      name.setAttribute('disabled', 'true');
+      company.setAttribute('disabled', 'true');
+      email.setAttribute('disabled', 'true');
+      loc.setAttribute('disabled', 'true');
+      people.setAttribute('disabled', 'true');
+      date.setAttribute('disabled', 'true');
+      message.setAttribute('disabled', 'true');
+      status.setAttribute('disabled', 'true');
+      update.setAttribute('disabled', 'true');
+      completed.setAttribute('disabled', 'completed');
+      cancel.setAttribute('disabled', 'true');
+    }
+
+    function True() {
+      let name = document.getElementById('name');
+      let company = document.getElementById('company');
+      let email = document.getElementById('email');
+      let loc = document.getElementById('loc');
+      let people = document.getElementById('people');
+      let date = document.getElementById('date');
+      let message = document.getElementById('message');
+      let status = document.getElementById('status');
+      let update = document.getElementById('update');
+      let completed = document.getElementById('completed');
+      let cancel = document.getElementById('cancel');
+      name.removeAttribute('disabled');
+      company.removeAttribute('disabled');
+      email.removeAttribute('disabled');
+      loc.removeAttribute('disabled');
+      people.removeAttribute('disabled');
+      date.removeAttribute('disabled');
+      message.removeAttribute('disabled');
+      status.removeAttribute('disabled');
+      update.removeAttribute('disabled');
+      completed.removeAttribute('disabled');
+      cancel.removeAttribute('disabled');
+    }
+
+    function reload_page() {
+      window.location.reload();
+    }
+  </script>
+</body>
+
+</html>

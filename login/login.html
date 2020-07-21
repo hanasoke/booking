@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PERSONA EO | Admin Login Page</title>
+	<link rel="icon" type="image/x-icon" href="../assets/img/nav_logo.png" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+			     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-auth.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyDUnGtRP_WAOnZSCwZ7XS7tQsTBhfyAf8w",
+			authDomain: "project-bye1.firebaseapp.com",
+			databaseURL: "https://project-bye1.firebaseio.com",
+			projectId: "project-bye1",
+			storageBucket: "project-bye1.appspot.com",
+			messagingSenderId: "542719376561",
+			appId: "1:542719376561:web:f50ceb71bf092f412bf690",
+			measurementId: "G-CL0BPQL6DX"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	</script>
+
+
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="box-1"></div>
+		<div class="box-2"></div>
+		<div class="box-3"></div>
+		<div class="bubbles">
+			<div class="box-4"></div>
+			<div class="box-5"></div>
+			<div class="box-6"></div>
+			<div class="box-7"></div>
+		</div>
+		<div class="box-8"></div>
+		<form name="Login">
+			<div class="box-login">
+				<h1 style="text-align: center; font-family: sans-serif;">LOGIN</h1>
+				<input type="text" placeholder="Email" name="email" id="email_field" />
+				<br><br>
+				<input type="password" placeholder="Password" id="password_field" />
+				<br><br><br><br><br>
+				<button type="button" onclick="login()">LOGIN HERE</button>
+			</div>
+		</form>
+	</div>
+	<script src="../assets/js/sweetalert2.all.min.js"></script>
+	<script src="../assets/js/login.js"></script>
+
+</body>
+
+</html>

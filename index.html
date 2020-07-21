@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Persona Event Organizer</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/nav_logo.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="assets/css/styles.css" rel="stylesheet" />
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDUnGtRP_WAOnZSCwZ7XS7tQsTBhfyAf8w",
+            authDomain: "project-bye1.firebaseapp.com",
+            databaseURL: "https://project-bye1.firebaseio.com",
+            projectId: "project-bye1",
+            storageBucket: "project-bye1.appspot.com",
+            messagingSenderId: "542719376561",
+            appId: "1:542719376561:web:f50ceb71bf092f412bf690",
+            measurementId: "G-CL0BPQL6DX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/nav_logo.png" alt="" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Persona Event Organizer!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+            </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Services</h2>
+                <h3 class="section-subheading text-muted">We will be happy to serve you.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-university fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Company Occasion</h4>
+
+                    <button class="btn btn-primary" id="btn1">Details</button>
+                    <p class="text-muted" id="slide1" style="display: none; color: black;">Our team is reliable in
+                        preparing the needs of clients to conduct group meetings in order to formulate and define common
+                        goals, we often integrate every event we organize with Business, Creative and Leisure elements
+                        for clients, so that Working Meeting, Deliberation, Conference; Organized events can achieve
+                        their goals well, comfortable and fit even more than expected.
+                        <p></p>
+
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-birthday-cake fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Fun Days</h4>
+
+                    <button class="btn btn-primary" id="btn2">Details</button>
+                    <p class="text-muted" id="slide2" style="display: none; color: black;">The best effort and hard work
+                        has been given throughout the year. Then it is time for the company to give appreciation to the
+                        memories for the entire Team in the company. There is no better way to say "Thank You", other
+                        than by organizing extraordinary employee appreciation events. We will help provide ideas and
+                        solutions for this event, helping to plan the event is our passion.
+                        <p></p>
+
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Special Event</h4>
+
+                    <button class="btn btn-primary" id="btn3">Details</button>
+                    <p class="text-muted" id="slide3" style="display: none; color: black;">A special event is a special
+                        ritual, designation, appearance, or celebration that is definitely planned and made to mark
+                        special events or to achieve social, cultural, or shared goals.
+                        <p></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Portfolio</h2>
+                <h3 class="section-subheading text-muted">Browse Our Project Gallery.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-search fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/1-tb.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Corporate Gethring</div>
+                            <div class="portfolio-caption-subheading text-muted">Company Occasion</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-search fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/2-tb.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Training & Development</div>
+                            <div class="portfolio-caption-subheading text-muted">Explore</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-search fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/3-tb.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Wedding</div>
+                            <div class="portfolio-caption-subheading text-muted">Special Event</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-search fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/4-tb.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Exhibition</div>
+                            <div class="portfolio-caption-subheading text-muted">Special Event</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-search fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/5-tb.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Party</div>
+                            <div class="portfolio-caption-subheading text-muted">Fun Days</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-search fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/6-tb.jpg" alt="" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Tour and Travel</div>
+                            <div class="portfolio-caption-subheading text-muted">Fun Days</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">About</h2>
+                <h3 class="section-subheading text-muted">Creative Solutions for you.</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/01.jpg"
+                            alt="" /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>July 2017</h4>
+                            <h4 class="subheading">Our Humble Beginnings</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Starting from a collection of young professionals who have been active
+                                in various Jakarta and Indonesia Event Organizer Services, we support to create a new,
+                                more solid team to be able to make something more creative and acceptable to the
+                                community.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/02.jpg"
+                            alt="" /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>March 2018</h4>
+                            <h4 class="subheading">An Agency is Born</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">At present we have 3 Unit Divisions that specifically handle customer
+                                needs, namely Marketing who is in charge as an Account Manager where our team will
+                                analyze and prepare solutions for end-to-end implementation of activities.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/03.jpg"
+                            alt="" /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>December 2019</h4>
+                            <h4 class="subheading">Transition to Full Service</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">now our team is experienced in using the latest tools and software to
+                                help prepare the needs in the fields of graphics, animation and advertising. The third
+                                division is Production, which will assist you in optimally implementing according to the
+                                existing agreements and needs.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/04.jpg"
+                            alt="" /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>January 2020</h4>
+                            <h4 class="subheading">Expansion</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">In accordance with the challenges of the business world today where
+                                business activities must be more effective and efficient, it requires business people to
+                                be more careful in setting steps and strategies. No exception in organizing an event /
+                                event which indirectly supports the company's business steps in the form of external
+                                activities to conduct promotions / sales, enhance the company's brand image or internal
+                                activities such as team building that aims to improve the quality of existing resources
+                                into an synergies that have a positive impact on the progress of the company.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            Be Part
+                            <br />
+                            Of Our
+                            <br />
+                            Story!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Team-->
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                <h3 class="section-subheading text-muted">Meet The Team.</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/azz.png" alt="" />
+                        <h4>Abdullah Azzam Robbani</h4>
+                        <p class="text-muted">CEO & Founder</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/nav_logo.png" alt="" />
+                        <h4>PERSONA EO</h4>
+                        <p class="text-muted">EVENT ORGANIZER</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/hanas.jpg" alt="" />
+                        <h4>Hanas Bayu Pratama</h4>
+                        <p class="text-muted">Developer</p>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">When you choose PERSONA, you are hiring a professional company with the
+                        experience to manage your corporate event, from big parts to every small details of your
+                        program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Clients-->
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/envato.jpg" alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/designmodo.jpg"
+                            alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/themeforest.jpg"
+                            alt="" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/creative-market.jpg"
+                            alt="" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Book Now</h2>
+                <h3 class="section-subheading text-muted">Booking Form.</h3>
+            </div>
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="Your Name *"
+                                required="required" data-validation-required-message="Please enter your name." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="company" type="text" placeholder="Your Company *"
+                                required="required" data-validation-required-message="Please enter your company." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <input class="form-control" id="email" type="tel" placeholder="Your Email *"
+                                required="required" data-validation-required-message="Please enter your email address."
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Your Email Format is Wrong" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" id="loc" type="text" placeholder="Your Location Event *"
+                                required="required"
+                                data-validation-required-message="Please enter your location event." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="people" type="number" placeholder="How many people? *"
+                                required="required"
+                                data-validation-required-message="Please enter your, How many people?." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <input class="form-control" id="date" type="date" placeholder="Your Date Event *"
+                                required="required" data-validation-required-message="Please enter your date event." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class=text-center">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <textarea class="form-control" id="message" placeholder="Your Message *" required="required"
+                            data-validation-required-message="Please enter a message."></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="text-center" style="padding: 50px;">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                            <input class="btn btn-warning btn-xl text-uppercase" type="reset" value="Reset"
+                                name="reset">
+                        </div>
+                        <div class="col">
+                            <input class="btn btn-success  btn-xl text-uppercase" style="" type="button" value="Send"
+                                onclick="save_user();" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-left">Copyright � Persona Event Organizer 2020</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-right">
+                    <a class="mr-3" href="#!">Privacy Policy</a>
+                    <a href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here-->
+                                <h2 class="text-uppercase">Corporate Gathering</h2>
+                                <p class="item-intro text-muted">Company Occasion</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1-full.jpg" alt="" />
+                                <p>Corporate Gathering is an activity carried out in order to improve the performance of
+                                    a group of companies or private companies that have certain objectives. Corporate
+                                    Gathering in general is to improve internal communication, foster intimacy,
+                                    eliminate stress and conflict, have fun and so on.</p>
+                                <ul class="list-inline">
+                                    <li>Date: January 2020</li>
+                                    <li>Client: AR Company</li>
+                                    <li>Category: Gethering</li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here-->
+                                <h2 class="text-uppercase">Training & Development</h2>
+                                <p class="item-intro text-muted">Explore.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2-full.jpg" alt="" />
+                                <p>Training is something the company usually does so that its employees can improve
+                                    their abilities, so that the training runs effectively, we can plan what programs
+                                    are right and we will prepare everything from trainers, training places, food and
+                                    stationery at competitive prices.</p>
+                                <ul class="list-inline">
+                                    <li>Date: January 2020</li>
+                                    <li>Client: Art Comunity</li>
+                                    <li>Category: Fun Days</li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here-->
+                                <h2 class="text-uppercase">Wedding</h2>
+                                <p class="item-intro text-muted">Special Event.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3-full.jpg" alt="" />
+                                <p>Marriage is a one-time moment in your life, you want to prepare for the event as
+                                    beautiful and as special as possible and we will prepare for your wedding in terms
+                                    of concept choice, budget, time, and vendor selection supporting the wedding.</p>
+                                <ul class="list-inline">
+                                    <li>Date: February 2020</li>
+                                    <li>Client: Private</li>
+                                    <li>Category:Special Event </li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here-->
+                                <h2 class="text-uppercase">Exhibition</h2>
+                                <p class="item-intro text-muted">Special Event.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4-full.jpg" alt="" />
+                                <p>Exhibitions Organizer to ensure the events created can run perfectly. Exhibitions
+                                    Organizer can help clients and ensure the purpose of the exhibition is running,
+                                    which can provide opportunities for prospective buyers to gather at the event and
+                                    see the products that are in accordance with the exhibition being held.</p>
+                                <ul class="list-inline">
+                                    <li>Date: February 2020</li>
+                                    <li>Client: Private</li>
+                                    <li>Category:Special Event </li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 5-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here-->
+                                <h2 class="text-uppercase">Party</h2>
+                                <p class="item-intro text-muted">Fun Days.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5-full.jpg" alt="" />
+                                <p>Party Planner is a service from us to organize and provide the needs for Birthday
+                                    Party, anniversary, school farewell events, school art activities by providing
+                                    balloon decorations, stage decorations, souvenirs, MC, DJ, etc.</p>
+                                <ul class="list-inline">
+                                    <li>Date: March 2020</li>
+                                    <li>Client: Private</li>
+                                    <li>Category: Fun Days</li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 6-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" />
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here-->
+                                <h2 class="text-uppercase">Tour and Travel</h2>
+                                <p class="item-intro text-muted">Fun Days.</p>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6-full.jpg" alt="" />
+                                <p>Tour and Travel Organizer is a service business that provides tour and domestic
+                                    travel services. Businesses engaged in tourism. The services provided to customers
+                                    can be tailored to the package and facilities desired by consumers.</p>
+                                <ul class="list-inline">
+                                    <li>Date: March 2020</li>
+                                    <li>Client: Private</li>
+                                    <li>Category: Fun Days</li>
+                                </ul>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/jquery-3.3.1.js"></script>
+
+    <script>
+        var databaseRef = firebase.database().ref('booking/');
+
+        function save_user() {
+
+            var x;
+            x = document.getElementById("people").value;
+
+            if (isNaN(x) || x < 31) {
+                alert('approximate guest who will be present, can not be less than 30 people');
+                return false;
+            } else {
+
+                var dateString = document.getElementById('date').value;
+                var myDate = new Date(dateString);
+                var today = new Date();
+                var name = document.getElementById('name').value;
+                var company = document.getElementById('company').value;
+                var email = document.getElementById('email').value;
+                var loc = document.getElementById('loc').value;
+                var people = document.getElementById('people').value;
+                var date = document.getElementById('date').value;
+                var message = document.getElementById('message').value;
+                var uid = firebase.database().ref().child('booking').push().key;
+                var data = {
+                    name: name,
+                    company: company,
+                    email: email,
+                    loc: loc,
+                    people: people,
+                    date: date,
+                    message: message
+                }
+
+                if (myDate < today) {
+                    alert('You cannot choose the date');
+                    return false;
+                } else {
+
+                    var updates = {};
+                    updates['/booking/' + uid] = data;
+                    firebase.database().ref().update(updates);
+                    alert('Booking created successfully!');
+                    reload_page();
+                    return true;
+                }
+
+            }
+        }
+
+        function reload_page() {
+            window.location.reload();
+        }
+    </script>
+
+    <!--slide menu -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#slide1").slideToggle("slow"); //fast
+            });
+            $("#btn2").click(function () {
+                $("#slide2").slideToggle("slow");
+            });
+            $("#btn3").click(function () {
+                $("#slide3").slideToggle("slow");
+            });
+        });
+    </script>
+    <!--end slide menu -->
+
+</body>
+
+</html>
